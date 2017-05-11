@@ -1,11 +1,11 @@
 import click
 
-@click.command()
 def setup_astropy_project():
 
     finish = False
-    while not (finish):
     
+    while not finish:
+
         package_name = click.prompt('Your package name')
 
         module_name = click.prompt('The name of your module')
@@ -17,7 +17,7 @@ def setup_astropy_project():
         author_name = click.prompt('Please give the names of the authors', default='', show_default=False)
 
         author_email = click.prompt('Please give a contact email', default='', show_default=False)
-    
+
         licence = click.prompt(
             '''Please choose a licence [1]:
             1 - BSD 3-Clause
@@ -45,7 +45,7 @@ def setup_astropy_project():
             licence_str = 'BSD 2-Clause'
         else:
             licence_str = 'Other'
-    
+
         click.echo('\nHere is the project you set up:')
         click.echo('----------------------------------------')
         click.echo('package name:\t\t%s' %package_name)
@@ -59,7 +59,7 @@ def setup_astropy_project():
         click.echo('contains C code:\t%s' %('yes' if include_cextern_folder else 'no'))
         click.echo('short description:\t%s' %short_description)
         click.echo('long description:\n\t%s' %long_description)
-        
+
 
         finish = click.prompt('\nAre you happy with your project? [y/n]', type=bool)
 
@@ -76,9 +76,9 @@ def setup_astropy_project():
                        'long description' : long_description
                        }
     return project_values
-    
 
-    
+
+
 if __name__ == '__main__':
     setup_astropy_project()
 
