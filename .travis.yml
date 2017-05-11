@@ -10,7 +10,7 @@ install:
 
 script:
   - flake8 pieceofcake --ignore=E501
-  - pytest pieceofcake --cov pieceofcake
+  - py.test pieceofcake --cov pieceofcake
 
 after_success:
   - coveralls
