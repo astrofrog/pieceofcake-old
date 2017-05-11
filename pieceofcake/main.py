@@ -8,7 +8,8 @@ from .github import push_to_github
 from .utils import click_prompt_multiple_choice
 from .cookiecutter_wrapper import render_template
 
-TEMPLATE = '/Users/tom/Dropbox/Code/Astropy/package-template'
+TEMPLATE = 'https://github.com/astropy/package-template'
+
 
 @click.group()
 def main():
