@@ -57,7 +57,7 @@ def setup_astropy_project():
         click.echo('project url:\t\t%s' %project_url)
         click.echo('contains example code:\t%s' %('yes' if example_code else 'no'))
         click.echo('contains C code:\t%s' %('yes' if include_cextern_folder else 'no'))
-        click.echo('short description:\t %s' %short_description)
+        click.echo('short description:\t%s' %short_description)
         click.echo('long description:\n\t%s' %long_description)
         
 
