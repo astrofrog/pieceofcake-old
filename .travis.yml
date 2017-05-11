@@ -1,0 +1,16 @@
+language: python
+
+python:
+  - 2.7
+  - 3.3
+  - 3.6
+
+install:
+  - pip install pytest pytest-cov flake8 coveralls
+
+script:
+  - flake8 pieceofcake --ignore=E501
+  - pytest pieceofcake --cov pieceofcake
+
+after_success:
+  - coveralls
