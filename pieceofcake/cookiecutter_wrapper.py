@@ -1,11 +1,12 @@
 import os
 import json
+import shutil
 import tempfile
 
 from cookiecutter.main import cookiecutter
 
 
-def render_template(template_url, parameters):
+def render_template(template_url, parameters, local_folder):
 
     tmpdir = tempfile.mkdtemp()
 
@@ -16,9 +17,9 @@ def render_template(template_url, parameters):
                  no_input=True,
                  output_dir=tmpdir)
 
-    project_path = os.path.join(tmpdir, parameters['project_name'])
+    project_path = os.path.join(tmpdir, parameters['package_name'])
 
     with open(os.path.join(project_path, "cookiecutter.json"), "w") as f:
         json.dump(parameters, f, ensure_ascii=False, indent=2, sort_keys=True)
 
-    return project_path
+    shutil.copytree(project_path, local_folder)
